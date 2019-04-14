@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    // setting new activity on button click
     public void onToDoClick(View v){
         Intent myIntent = new Intent(getBaseContext(),   ToDo.class);
         startActivity(myIntent);
