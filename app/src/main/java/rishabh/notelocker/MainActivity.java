@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    // Opens To-Do feature on button click.
     public void onToDoClick(View v){
         Intent myIntent = new Intent(getBaseContext(),   ToDo.class);
         startActivity(myIntent);
