@@ -14,6 +14,13 @@
 
 # Week 5, Sunday 7/April [Aditya]
 - Created To-Do feature for the app this week. [Aditya Singh Kushwah]
+-Following files were created/made changes to:
+- app/src/main/java/rishabh/notelocker/ToDo.java [Aditya Singh Kushwah]
+- app/src/main/java/rishabh/notelocker/db/AccessData.java [Aditya Singh Kushwah]
+- app/src/main/java/rishabh/notelocker/db/OpenDatabase.java [Aditya Singh Kushwah]
+- app/src/main/res/menu/todo_menu.xml [Aditya Singh Kushwah]
+- app/src/main/res/layout/todo_item.xml [Aditya Singh Kushwah]
+- app/src/main/res/layout/activity_to_do.xml [Aditya Singh Kushwah]
 - WHICH FILE(s)? [Henry]
 
 # Week 6, Monday 8/April [Henry]
@@ -60,3 +67,11 @@ Some directories/Activities that were created/modified are as follows
 - app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
 - app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png
 - app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+
+# Week 6, Sunday 14/April [Aditya]
+Added a navigation drawer to the app, containing major features of the application. 
+Follwing files were created/changed:
+- app/src/main/java/rishabh/notelocker/MainActivity.java
+- app/src/main/res/layout/header.xml
+- app/src/main/res/menu/drawermenu.xml
+- app/src/main/res/layout/activity_main.xml
