@@ -11,8 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".EnterPasswordActivity"></activity>
         <activity android:name=".CreatePasswordActivity" />
-        <activity android:name=".ToDo"
-            android:theme="@style/ToDoBarTheme"/>
+        <activity android:name=".ToDo" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:theme="@style/ToDoBarTheme"/>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

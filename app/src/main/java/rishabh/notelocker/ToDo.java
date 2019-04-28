@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,29 +17,54 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import android.support.v7.widget.Toolbar;
 import java.util.ArrayList;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.design.widget.NavigationView;
+import android.view.MenuItem;
+import android.content.Intent;
+import android.support.v4.view.GravityCompat;
 
 import rishabh.notelocker.db.AccessData;
 import rishabh.notelocker.db.OpenDatabase;
 
 
-public class ToDo extends AppCompatActivity {
+public class ToDo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private static final String TAG = "ToDo";
     private OpenDatabase OpenDB;
     private ListView todoListView;
     private ArrayAdapter<String> listAdapter;
 
-// oncreate
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
+                drawer,
+                toolbar,
+                R.string.nav_open_drawer,
+                R.string.nav_close_drawer);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        Fragment fragment = new HomeFragment();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.add(R.id.content_frame, fragment);
+        ft.commit();
 
         /* Fetching data from the database and displaying it on screen */
         OpenDB = new OpenDatabase(this);
         todoListView = (ListView) findViewById(R.id.list_todo);
+
         updateUI();
 
         SQLiteDatabase db = OpenDB.getReadableDatabase();
@@ -51,6 +78,45 @@ public class ToDo extends AppCompatActivity {
         }
         cursor.close();
         db.close();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        Fragment fragment = null;
+        Intent intent = null;
+        switch(id){
+            case R.id.nav_home:
+                fragment = new HomeFragment();
+                break;
+
+            case R.id.nav_todo:
+                intent = new Intent(this, ToDo.class);
+                break;
+
+            default:
+                fragment = new HomeFragment();
+        }
+        if (fragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.commit();
+        } else {
+            startActivity(intent);
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 
     /* onCreateOptionMenu: Inflates the menu in to_do activity */
