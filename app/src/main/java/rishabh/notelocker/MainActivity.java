@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
+// this is a new comment for additional features
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(mToggle.onOptionsItemSelected(item)) {
@@ -34,5 +34,8 @@ public class MainActivity extends AppCompatActivity {
     public void onToDoClick(View v){
         Intent myIntent = new Intent(getBaseContext(),   ToDo.class);
         startActivity(myIntent);
+    }
+    public void myfun(){
+    	
     }
 }

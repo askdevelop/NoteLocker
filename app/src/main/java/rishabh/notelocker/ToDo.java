@@ -29,7 +29,7 @@ public class ToDo extends AppCompatActivity {
     private ListView todoListView;
     private ArrayAdapter<String> listAdapter;
 
-
+// oncreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
