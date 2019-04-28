@@ -75,3 +75,16 @@ Follwing files were created/changed:
 - app/src/main/res/layout/header.xml
 - app/src/main/res/menu/drawermenu.xml
 - app/src/main/res/layout/activity_main.xml
+
+# Week 7, Sunday 28/April [Aditya]
+Linked activities and fragments to the navigation drawer. Created additional app sections in the navigation drawer. 
+Following files were created/changed:
+- app/src/main/java/rishabh/notelocker/MainActivity.java
+- app/src/main/java/rishabh/notelocker/Todo.java
+- app/src/main/java/rishabh/notelocker/HomeFragment.java
+- app/src/main/res/layout/fragment_home.xml
+- app/src/main/res/layout/activity_todo.xml
+- app/src/main/res/menu/menu_nav.xml
+- app/src/main/res/layout/activity_main.xml
+- app/src/main/res/layout/toolbar_main.xml
+
