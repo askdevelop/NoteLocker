@@ -9,9 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EnterPasswordActivity"></activity>
+        <activity android:name=".Information"
+            android:label="Information"></activity>
+        <activity android:name=".Notes"
+            android:label="Notes"/>
+        <activity
+            android:name=".Settings"
+            android:label="Settings" />
+        <activity android:name=".EnterPasswordActivity" />
         <activity android:name=".CreatePasswordActivity" />
-        <activity android:name=".ToDo" />
+        <activity
+            android:name=".ToDo"
+            android:label="To-Do List" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
