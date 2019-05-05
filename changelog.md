@@ -88,3 +88,17 @@ Following files were created/changed:
 - app/src/main/res/layout/activity_main.xml
 - app/src/main/res/layout/toolbar_main.xml
 
+# Week 8, Sunday 05/May [Aditya]
+Finalised navigation drawer with all activities supporting it inside them. Made UI improvements like headings on current app section opened through navigation drawer, New icon for adding To-Do, made changes in fonts of To-Do activity, to enhance visibility. Fixed bug where fragments were overlapping with activities, when working with navigation drawer.Fixed multiple app crashes problems, while working with selection in navigation drawer. Following files were created/changed:
+- app/src/main/java/rishabh/notelocker/MainActivity.java
+- app/src/main/java/rishabh/notelocker/Information.java
+- app/src/main/java/rishabh/notelocker/Notes.java
+- app/src/main/java/rishabh/notelocker/Settings.java
+- app/src/main/res/layout/activity_information.xml
+- app/src/main/res/layout/activity_todo.xml
+- app/src/main/res/layout/activity_notes.xml
+- app/src/main/res/layout/activity_settings.xml
+- app/src/main/res/menu/menu_nav.xml
+- app/src/main/res/menu/todo_menu.xml
+- app/src/main/res/layout/activity_main.xml
+- app/src/main/res/layout/todo_item.xml
